@@ -7,6 +7,16 @@
 
 std::vector< char > foo(std::list< Human >& people)
 {
-    // Twoja implementacja tutaj
-    return {};
+    std::vector< char > result(people.size());
+    size_t currentIndex = people.size();
+    for (auto& human : people) {
+
+       
+        char val = human.isMonster() ? 'n' : 'y';
+        human.birthday();
+        result[--currentIndex] = val;
+    }
+    
+ 
+    return result;
 }
